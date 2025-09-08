@@ -1,0 +1,335 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apple-inspired Design System */
+
+@layer base {
+  :root {
+    /* Apple Light Theme */
+    --background: 0 0% 99%;
+    --foreground: 220 13% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+    --card-hover: 0 0% 98%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+
+    /* Apple Blue */
+    --primary: 212 100% 48%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 212 100% 45%;
+
+    /* Subtle Gray */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 13% 18%;
+    --secondary-hover: 220 14% 94%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 215 28% 17%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 212 100% 48%;
+
+    --radius: 12px;
+
+    /* Apple Design Tokens */
+    --apple-gray-50: 220 14% 98%;
+    --apple-gray-100: 220 14% 96%;
+    --apple-gray-200: 220 13% 91%;
+    --apple-gray-300: 220 9% 80%;
+    --apple-gray-400: 220 9% 60%;
+    --apple-gray-500: 220 9% 46%;
+    --apple-gray-600: 220 13% 28%;
+    --apple-gray-700: 220 13% 23%;
+    --apple-gray-800: 220 13% 18%;
+    --apple-gray-900: 220 13% 13%;
+
+    /* Apple Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(212 100% 50%), hsl(215 100% 60%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    --gradient-subtle: linear-gradient(to bottom, hsl(0 0% 100%), hsl(220 14% 99%));
+
+    /* Apple Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 13% 18% / 0.05);
+    --shadow: 0 4px 6px -1px hsl(220 13% 18% / 0.1), 0 2px 4px -1px hsl(220 13% 18% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(220 13% 18% / 0.1), 0 4px 6px -2px hsl(220 13% 18% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(220 13% 18% / 0.1), 0 10px 10px -5px hsl(220 13% 18% / 0.04);
+
+    /* Transitions */
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* High DPI Display Support */
+    --device-pixel-ratio: 1;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Darker background with better contrast */
+    --background: 220 13% 9%;
+    --foreground: 220 14% 96%;
+
+    --card: 220 13% 12%;
+    --card-foreground: 220 14% 96%;
+    --card-hover: 220 13% 15%;
+
+    --popover: 220 13% 12%;
+    --popover-foreground: 220 14% 96%;
+
+    /* Apple Blue adapted for dark mode */
+    --primary: 212 100% 60%;
+    --primary-foreground: 220 13% 9%;
+    --primary-hover: 212 100% 55%;
+
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 220 14% 96%;
+    --secondary-hover: 220 13% 22%;
+
+    --muted: 220 13% 18%;
+    --muted-foreground: 220 9% 70%;
+
+    --accent: 212 100% 60%;
+    --accent-foreground: 220 13% 9%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 220 13% 9%;
+
+    --border: 220 13% 22%;
+    --input: 220 13% 18%;
+    --ring: 212 100% 60%;
+
+    /* Apple Design Tokens for dark mode */
+    --apple-gray-50: 220 13% 15%;
+    --apple-gray-100: 220 13% 18%;
+    --apple-gray-200: 220 13% 22%;
+    --apple-gray-300: 220 9% 35%;
+    --apple-gray-400: 220 9% 50%;
+    --apple-gray-500: 220 9% 65%;
+    --apple-gray-600: 220 13% 75%;
+    --apple-gray-700: 220 13% 85%;
+    --apple-gray-800: 220 13% 90%;
+    --apple-gray-900: 220 13% 96%;
+
+    /* Dark mode gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(212 100% 60%), hsl(215 100% 70%));
+    --gradient-card: linear-gradient(135deg, hsl(220 13% 12%), hsl(220 13% 15%));
+    --gradient-subtle: linear-gradient(to bottom, hsl(220 13% 12%), hsl(220 13% 10%));
+
+    /* Sidebar colors for dark mode */
+    --sidebar-background: 220 13% 8%;
+    --sidebar-foreground: 220 14% 96%;
+    --sidebar-primary: 212 100% 60%;
+    --sidebar-primary-foreground: 220 13% 9%;
+    --sidebar-accent: 220 13% 15%;
+    --sidebar-accent-foreground: 220 14% 96%;
+    --sidebar-border: 220 13% 18%;
+    --sidebar-ring: 212 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  }
+}
+
+@layer components {
+  /* Apple-style Button Variants */
+  .btn-apple {
+    @apply inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[44px] min-w-[44px];
+  }
+
+  .btn-primary {
+    @apply btn-apple bg-primary text-primary-foreground hover:bg-[hsl(var(--primary-hover))] shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply btn-apple bg-secondary text-secondary-foreground hover:bg-[hsl(var(--secondary-hover))] border border-border active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply btn-apple hover:bg-secondary/50 text-foreground active:scale-[0.98];
+  }
+
+  /* Apple-style Card */
+  .card-apple {
+    @apply rounded-2xl border border-border bg-card p-4 sm:p-6 shadow-sm hover:shadow-md transition-all duration-200;
+    background: var(--gradient-card);
+  }
+
+  .card-hover {
+    @apply hover:bg-[hsl(var(--card-hover))] transform hover:scale-[1.01];
+  }
+
+  /* Apple-style Input */
+  .input-apple {
+    @apply flex h-10 sm:h-12 w-full rounded-xl border border-border bg-background px-3 sm:px-4 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200;
+  }
+
+  /* Apple-style Badge */
+  .badge-apple {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium transition-colors;
+  }
+
+  .badge-primary {
+    @apply badge-apple bg-primary/10 text-primary border border-primary/20;
+  }
+
+  .badge-secondary {
+    @apply badge-apple bg-secondary text-secondary-foreground border border-border;
+  }
+
+  .badge-success {
+    @apply badge-apple bg-green-100 text-green-800 border border-green-300 dark:bg-green-900/30 dark:text-green-400 dark:border-green-700;
+  }
+
+  .badge-warning {
+    @apply badge-apple bg-orange-100 text-orange-800 border border-orange-300 dark:bg-orange-900/30 dark:text-orange-400 dark:border-orange-700;
+  }
+
+  /* Apple-style Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-apple {
+    box-shadow: var(--shadow);
+  }
+
+  .shadow-apple-lg {
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* Touch optimizations for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .btn-apple {
+    @apply min-h-[44px] min-w-[44px] active:scale-95;
+  }
+  
+  .hover\\:scale-\\[1\\.02\\]:hover {
+    transform: none;
+  }
+  
+  .active\\:scale-95:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 640px) {
+  .card-apple {
+    @apply p-4;
+  }
+  
+  .btn-apple {
+    @apply px-4 py-2 text-sm;
+  }
+}
+
+/* High DPI Display Support for Mac Retina and other high-density displays */
+@media 
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  /* Improve rendering on high DPI displays */
+  .table-visualizer {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  /* Ensure crisp rendering of table elements */
+  .table-visualizer * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Improve device positioning accuracy on high DPI */
+  .device-element {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
